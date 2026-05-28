@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VTK Trible Trailer Inc. — Freight Transportation</title>
+  <!-- Lab 03: Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Lab 03: External stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- NAV STRIP (Lab 03) -->
+<div class="nav-strip"></div>
+
+<!-- HEADER / NAV (Lab 04: Flexbox header) -->
+<header class="header" id="header">
+  <div class="nav-logo">
+    <div class="nav-logo-box">VTK</div>
+    <div class="nav-logo-text">
+      <strong>TRIBLE TRAILER INC.</strong>
+      <span>Transportation &amp; Logistics</span>
+    </div>
+  </div>
+
+  <!-- Lab 04: nav with ul + flex gap -->
+  <nav class="main-nav" id="main-nav">
+    <ul>
+      <li><a href="#home" class="active" onclick="showPage('home',this);return false;">Main page</a></li>
+      <li><a href="#services" onclick="showPage('services',this);return false;">Services</a></li>
+      <li><a href="#garage" onclick="showPage('garage',this);return false;">Truck Garage</a></li>
+      <li><a href="#about" onclick="showPage('about',this);return false;">About us</a></li>
+      <li><a href="#contacts" onclick="showPage('contacts',this);return false;">Contacts</a></li>
+    </ul>
+  </nav>
+
+  <!-- Lab 04: user-actions block -->
+  <div class="user-actions">
+    <!-- Lab 07: inline SVG cart icon -->
+    <button class="btn btn-cart" onclick="showPage('contacts',null);return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="18" height="18">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+      </svg>
+      Get a Quote
+    </button>
+  </div>
+
+  <!-- Lab 07: hamburger button -->
+  <button class="menu-toggle" id="hamburger" aria-label="Відкрити меню" onclick="toggleMenu()">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+  </button>
+</header>
+
+<!-- Lab 07: Mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#" class="active" onclick="showPage('home',this);toggleMenu();return false;">Main page</a></li>
+    <li><a href="#" onclick="showPage('services',this);toggleMenu();return false;">Services</a></li>
+    <li><a href="#" onclick="showPage('garage',this);toggleMenu();return false;">Truck Garage</a></li>
+    <li><a href="#" onclick="showPage('about',this);toggleMenu();return false;">About us</a></li>
+    <li><a href="#" onclick="showPage('contacts',this);toggleMenu();return false;">Contacts</a></li>
+  </ul>
+  <a href="#" class="btn btn-primary mobile-cta" onclick="showPage('contacts',null);toggleMenu();return false;">Get a Quote</a>
+</div>
+<div class="menu-overlay" id="menu-overlay" onclick="toggleMenu()"></div>
+
+<!-- ============================================================
+     PAGE: HOME
+============================================================ -->
+<div class="page visible" id="page-home">
+
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">European Freight Leader Since 2009</p>
+      <h1>RELIABLE DELIVERY<span>THROUGHOUT EUROPE</span></h1>
+      <p class="hero-sub">Trible Trailer Inc. — your trusted partner in freight transportation across 48 countries.</p>
+      <p class="hero-services">FTL · LTL · Reefer · Flatbed · Hazmat · Cross-Border</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary" onclick="showPage('contacts',null);return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" /></svg>
+          Send Cargo
+        </a>
+        <a href="#" class="btn btn-outline" onclick="showPage('garage',null);return false;">View Our Fleet</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-image-placeholder">
+        <div class="truck-silhouette">🚛</div>
+        <span>VTK FLEET — EUROPE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years on the market</div></div>
+    <div class="stat"><div class="stat-num">2 400+</div><div class="stat-label">Jobs per month</div></div>
+    <div class="stat"><div class="stat-num">48</div><div class="stat-label">Countries served</div></div>
+    <div class="stat"><div class="stat-num">99.2%</div><div class="stat-label">On-time delivery</div></div>
+  </div>
+
+  <!-- Services overview (Lab 04: flex wrap cards) -->
+  <section class="section" id="services-overview">
+    <div class="section-header">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-sub">A full range of freight solutions for your business</p>
+    </div>
+    <!-- Lab 04: products-grid pattern (flex-wrap) -->
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon">🚛</div>
+        <div class="service-info">
+          <h3>FTL Transportation</h3>
+          <p>Full Truckload for large shipments 15,000–45,000 kg. Direct door-to-door delivery across Europe.</p>
+        </div>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">📦</div>
+        <div class="service-info">
+          <h3>LTL Transportation</h3>
+          <p>Less-than-Truckload — consolidated shipping for smaller cargo. Cost-effective groupage solutions.</p>
+        </div>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">❄️</div>
+        <div class="service-info">
+          <h3>Refrigerated</h3>
+          <p>Temperature-controlled transport for perishable goods, pharmaceuticals, and food products.</p>
+        </div>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">🏗️</div>
+        <div class="service-info">
+          <h3>Flatbed / Oversized</h3>
+          <p>Heavy machinery, construction equipment, and oversized cargo with specialized trailers.</p>
+        </div>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">⚠️</div>
+        <div class="service-info">
+          <h3>Dangerous Cargo</h3>
+          <p>ADR-certified Hazmat transport with licensed drivers and full documentation support.</p>
+        </div>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">🌍</div>
+        <div class="service-info">
+          <h3>Cross-Border</h3>
+          <p>International customs clearance, TIR carnets, and EU/non-EU border crossing expertise.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================================
+     PAGE: SERVICES (Lab 05: CSS Grid layout)
+============================================================ -->
+<div class="page" id="page-services">
+  <div class="page-header">
+    <div class="breadcrumb">Main page / Services</div>
+    <h1>Transport Services</h1>
+    <p>We transport any cargo to any point in Europe</p>
+  </div>
+
+  <!-- Lab 05: page-layout grid (sidebar + content) -->
+  <div class="page-layout" id="services-layout">
+    <aside class="sidebar">
+      <h3>Service Types</h3>
+      <ul>
+        <li><button class="sidebar-btn active" onclick="selectService(this,'ftl')">🚛 FTL Transportation</button></li>
+        <li><button class="sidebar-btn" onclick="selectService(this,'ltl')">📦 LTL Transportation</button></li>
+        <li><button class="sidebar-btn" onclick="selectService(this,'reefer')">❄️ Refrigerated</button></li>
+        <li><button class="sidebar-btn" onclick="selectService(this,'flatbed')">🏗️ Flatbed / Oversized</button></li>
+        <li><button class="sidebar-btn" onclick="selectService(this,'hazmat')">⚠️ Hazmat</button></li>
+        <li><button class="sidebar-btn" onclick="selectService(this,'cross')">🌍 Cross-Border</button></li>
+      </ul>
+    </aside>
+
+    <section class="products-content" id="service-detail">
+      <div class="service-detail-card">
+        <div class="service-detail-img">[ PHOTO: FTL TRANSPORTATION — 15m TRAILER ]</div>
+        <div class="service-detail-body">
+          <h2 id="svc-title">FTL — Full Truckload Transportation</h2>
+          <p class="svc-tagline" id="svc-tagline">Ideal for large loads from 15,000 to 45,000 kilograms</p>
+          <hr>
+          <div class="detail-cols">
+            <div class="detail-desc">
+              <h4>Service Description</h4>
+              <p id="svc-desc">FTL transportation provides a dedicated truck exclusively for your cargo. The trailer travels directly from pickup to delivery without intermediate stops, minimizing handling risk and transit time. Ideal for time-sensitive or high-value shipments.</p>
+              <h4 style="margin-top:1.5rem;">Advantages:</h4>
+              <ul class="advantages-list" id="svc-advantages">
+                <li>Direct delivery without reloading</li>
+                <li>Lower risk of damage</li>
+                <li>Fixed price per shipment</li>
+                <li>Faster transit times</li>
+              </ul>
+            </div>
+            <div class="detail-sidebar-box">
+              <h4>Service Details</h4>
+              <hr>
+              <div id="svc-specs">
+                <div class="spec-row"><span class="spec-label">Load capacity:</span><span class="spec-val">up to 45,000 kg</span></div>
+                <div class="spec-row"><span class="spec-label">Volume:</span><span class="spec-val">up to 70 m³</span></div>
+                <div class="spec-row"><span class="spec-label">Trailer length:</span><span class="spec-val">13.8 m / 15 m</span></div>
+                <div class="spec-row"><span class="spec-label">Routes:</span><span class="spec-val">Germany, France, Poland &amp; more</span></div>
+                <div class="spec-row"><span class="spec-label">Delivery time:</span><span class="spec-val">1–5 business days</span></div>
+                <div class="spec-row"><span class="spec-label">Tracking:</span><span class="spec-val">GPS real-time</span></div>
+              </div>
+              <button class="btn btn-primary btn-full" onclick="showPage('contacts',null)">Request FTL Quote</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE: TRUCK GARAGE (Lab 05: CSS Grid + filter)
+============================================================ -->
+<div class="page" id="page-garage">
+  <div class="page-header">
+    <div class="breadcrumb">Main page / Truck Garage</div>
+    <h1>Our Truck Garage</h1>
+    <p>Fleet of 47 vehicles ready to serve your logistics needs</p>
+  </div>
+
+  <div class="filter-bar">
+    <span class="filter-label">Filter by type:</span>
+    <button class="filter-btn active" onclick="filterTrucks(this,'all')">All (47)</button>
+    <button class="filter-btn" onclick="filterTrucks(this,'dryvan')">Dry Van (24)</button>
+    <button class="filter-btn" onclick="filterTrucks(this,'reefer')">Reefer (12)</button>
+    <button class="filter-btn" onclick="filterTrucks(this,'flatbed')">Flatbed (8)</button>
+    <button class="filter-btn" onclick="filterTrucks(this,'stepdeck')">Step Deck (3)</button>
+  </div>
+
+  <!-- Lab 05: CSS Grid for trucks -->
+  <div class="trucks-grid" id="trucks-grid">
+    <article class="product-card truck-card" data-type="dryvan">
+      <div class="truck-img"><div class="vtk-tag">VTK</div>🚛<span class="status-badge status-free">Available</span></div>
+      <div class="truck-info">
+        <h3 class="truck-name">Scania R 500 4×2</h3>
+        <p class="truck-type">Dry Van · 53' — 45,000 lbs</p>
+        <hr>
+        <p class="truck-route">Route: IL → TX</p>
+        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
+        <div class="truck-actions">
+          <button class="btn btn-detail">Details</button>
+          <button class="btn btn-book">Book</button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card truck-card" data-type="reefer">
+      <div class="truck-img"><div class="vtk-tag">VTK</div>🚛<span class="status-badge status-transit">In Transit</span></div>
+      <div class="truck-info">
+        <h3 class="truck-name">Volvo FH 500 Globetrotter</h3>
+        <p class="truck-type">Reefer · 48' — 43,000 lbs</p>
+        <hr>
+        <p class="truck-route">Route: FL → CA</p>
+        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
+        <div class="truck-actions">
+          <button class="btn btn-detail">Details</button>
+          <button class="btn btn-book">Book</button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card truck-card" data-type="flatbed">
+      <div class="truck-img"><div class="vtk-tag">VTK</div>🚛<span class="status-badge status-service">In Service</span></div>
+      <div class="truck-info">
+        <h3 class="truck-name">Scania S 770 6×4</h3>
+        <p class="truck-type">Flatbed · 48' — 48,000 lbs</p>
+        <hr>
+        <p class="truck-route">Route: OH → WA</p>
+        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
+        <div class="truck-actions">
+          <button class="btn btn-detail">Details</button>
+          <button class="btn btn-book">Book</button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card truck-card" data-type="dryvan">
+      <div class="truck-img"><div class="vtk-tag">VTK</div>🚛<span class="status-badge status-free">Available</span></div>
+      <div class="truck-info">
+        <h3 class="truck-name">DAF XF105 410 6×4</h3>
+        <p class="truck-type">Dry Van · 53' — 45,000 lbs</p>
+        <hr>
+        <p class="truck-route">Base: Chicago, IL</p>
+        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
+        <div class="truck-actions">
+          <button class="btn btn-detail">Details</button>
+          <button class="btn btn-book">Book</button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card truck-card" data-type="reefer">
+      <div class="truck-img"><div class="vtk-tag">VTK</div>🚛<span class="status-badge status-transit">In Transit</span></div>
+      <div class="truck-info">
+        <h3 class="truck-name">MAN TGX 18.510 6×2</h3>
+        <p class="truck-type">Reefer · 53' — 43,500 lbs</p>
+        <hr>
+        <p class="truck-route">Route: TX → NY</p>
+        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
+        <div class="truck-actions">
+          <button class="btn btn-detail">Details</button>
+          <button class="btn btn-book">Book</button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card truck-card" data-type="stepdeck">
+      <div class="truck-img"><div class="vtk-tag">VTK</div>🚛<span class="status-badge status-free">Available</span></div>
+      <div class="truck-info">
+        <h3 class="truck-name">Mercedes ACTROS 1848</h3>
+        <p class="truck-type">Step Deck · 48' — 46,000 lbs</p>
+        <hr>
+        <p class="truck-route">Base: Dallas, TX</p>
+        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
+        <div class="truck-actions">
+          <button class="btn btn-detail">Details</button>
+          <button class="btn btn-book">Book</button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card truck-card" data-type="dryvan">
+      <div class="truck-img"><div class="vtk-tag">VTK</div>🚛<span class="status-badge status-transit">In Transit</span></div>
+      <div class="truck-info">
+        <h3 class="truck-name">Renault T 480 4×2</h3>
+        <p class="truck-type">Dry Van · 53' — 45,000 lbs</p>
+        <hr>
+        <p class="truck-route">Route: CA → MN</p>
+        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
+        <div class="truck-actions">
+          <button class="btn btn-detail">Details</button>
+          <button class="btn btn-book">Book</button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card truck-card" data-type="flatbed">
+      <div class="truck-img"><div class="vtk-tag">VTK</div>🚛<span class="status-badge status-free">Available</span></div>
+      <div class="truck-info">
+        <h3 class="truck-name">Iveco S-WAY 570 6×2</h3>
+        <p class="truck-type">Flatbed · 40' — 48,000 lbs</p>
+        <hr>
+        <p class="truck-route">Route: TX → TN</p>
+        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
+        <div class="truck-actions">
+          <button class="btn btn-detail">Details</button>
+          <button class="btn btn-book">Book</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE: ABOUT
+============================================================ -->
+<div class="page" id="page-about">
+  <div class="page-header">
+    <div class="breadcrumb">Main page / About us</div>
+    <h1>About VTK Trible Trailer Inc.</h1>
+    <p>15+ years of reliable freight transportation across Europe</p>
+  </div>
+  <div class="section">
+    <div class="about-placeholder">[ About page — coming soon ]</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE: CONTACTS (Lab 06: checkout/contact form)
+============================================================ -->
+<div class="page" id="page-contacts">
+  <div class="page-header">
+    <div class="breadcrumb">Main page / Contacts</div>
+    <h1>Contact Us</h1>
+    <p>Get a freight quote — we'll respond within 2 hours</p>
+  </div>
+
+  <div class="contacts-layout">
+    <!-- Lab 06: Complex form with fieldsets -->
+    <div class="form-box">
+      <h2>Get a Freight Quote</h2>
+      <p class="form-sub">Fill in the form and our team will get back to you shortly</p>
+      <hr>
+
+      <form action="#" method="POST" class="checkout-form" onsubmit="handleFormSubmit(event)">
+
+        <!-- Lab 06: fieldset + legend -->
+        <fieldset>
+          <legend>1. Cargo Details</legend>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="cargoType">Cargo type *</label>
+              <select id="cargoType" name="cargoType" required>
+                <option value="">Select type...</option>
+                <option value="dryvan">Dry Van</option>
+                <option value="reefer">Reefer</option>
+                <option value="flatbed">Flatbed</option>
+                <option value="hazmat">Hazmat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="weight">Cargo weight (kg) *</label>
+              <input type="text" id="weight" name="weight" placeholder="e.g. 12 000" required minlength="2">
+            </div>
+            <div class="form-group">
+              <label for="origin">From (Origin) *</label>
+              <input type="text" id="origin" name="origin" placeholder="City, Country" required>
+            </div>
+            <div class="form-group">
+              <label for="destination">To (Destination) *</label>
+              <input type="text" id="destination" name="destination" placeholder="City, Country" required>
+            </div>
+            <div class="form-group">
+              <label for="dispatchDate">Dispatch date *</label>
+              <input type="date" id="dispatchDate" name="dispatchDate" required>
+            </div>
+            <div class="form-group">
+              <label for="pallets">Loading spots</label>
+              <input type="text" id="pallets" name="pallets" placeholder="e.g. 12 pallets">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="comment">Additional requirements</label>
+            <textarea id="comment" name="comment" rows="3" placeholder="Temperature regime, hazmat class, special instructions..."></textarea>
+          </div>
+        </fieldset>
+
+        <!-- Lab 06: delivery radio buttons -->
+        <fieldset>
+          <legend>2. Delivery Method</legend>
+          <div class="form-radio-group">
+            <div class="form-radio">
+              <input type="radio" id="deliveryFTL" name="delivery" value="ftl" checked>
+              <label for="deliveryFTL">FTL — Full Truckload</label>
+            </div>
+            <div class="form-radio">
+              <input type="radio" id="deliveryLTL" name="delivery" value="ltl">
+              <label for="deliveryLTL">LTL — Groupage / Consolidated</label>
+            </div>
+            <div class="form-radio">
+              <input type="radio" id="deliveryExpress" name="delivery" value="express">
+              <label for="deliveryExpress">Express Delivery</label>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:1rem;">
+            <label for="city">Destination country</label>
+            <select id="city" name="city">
+              <option value="de">Germany</option>
+              <option value="pl">Poland</option>
+              <option value="fr">France</option>
+              <option value="ua">Ukraine</option>
+              <option value="gb">United Kingdom</option>
+              <option value="nl">Netherlands</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!-- Lab 06: contact info fieldset -->
+        <fieldset>
+          <legend>3. Contact Information</legend>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fullName">Full name *</label>
+              <input type="text" id="fullName" name="fullName" required placeholder="John Smith" minlength="3">
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Your company name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="email@company.com">
+            </div>
+            <!-- Lab 06: tel with pattern validation -->
+            <div class="form-group">
+              <label for="phone">Phone *</label>
+              <input type="tel" id="phone" name="phone" required
+                pattern="[\+][\d]{10,14}"
+                placeholder="+380991234567"
+                title="Format: +XXXXXXXXXXXX">
+            </div>
+          </div>
+          <!-- Lab 06: checkbox agreement -->
+          <div class="form-check">
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary btn-full">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" /></svg>
+          Send Quote Request
+        </button>
+      </form>
+    </div>
+
+    <div class="contacts-sidebar">
+      <div class="office-card">
+        <div class="office-label">HEADQUARTERS</div>
+        <h3>VTK Trible Trailer Inc.</h3>
+        <address class="office-addr">
+          8432 Commerce Pkwy, Suite 200<br>
+          Chicago, IL 60601, USA
+        </address>
+        <div class="office-hours">
+          Working hours: Mon–Fri 06:00–22:00 CST<br>
+          <strong>Dispatcher 24/7: +1 (773) 555-VTK1</strong>
+        </div>
+      </div>
+
+      <div class="channels-box">
+        <h3>Contact Channels</h3>
+        <div class="channel-row">
+          <div class="channel-dot"></div>
+          <div><div class="channel-label">General phone</div><div class="channel-val">+1 (773) 555-0100</div></div>
+        </div>
+        <div class="channel-row">
+          <div class="channel-dot"></div>
+          <div><div class="channel-label">Dispatcher 24/7</div><div class="channel-val">+1 (773) 555-8247</div></div>
+        </div>
+        <div class="channel-row">
+          <div class="channel-dot"></div>
+          <div><div class="channel-label">Cargo tracking</div><div class="channel-val">tracking@vtktrible.com</div></div>
+        </div>
+        <div class="channel-row">
+          <div class="channel-dot"></div>
+          <div><div class="channel-label">Accounting</div><div class="channel-val">billing@vtktrible.com</div></div>
+        </div>
+      </div>
+
+      <!-- Lab 07: Social icons in footer/sidebar -->
+      <div class="social-box">
+        <h3>Follow Us</h3>
+        <!-- Lab 07: inline SVG social icons -->
+        <ul class="social-links">
+          <li>
+            <a href="#" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.53 14.316l-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.288.27z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="map-box">
+        <h3>Find Us</h3>
+        <div class="map-placeholder">[ MAP — Chicago, IL ]</div>
+        <p class="dot-row">DOT# 4521890 · MC# 1187334 · FMCSA Registered · Bonded &amp; Insured</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FOOTER (Lab 07: SVG social icons)
+============================================================ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo-box" style="width:36px;height:36px;font-size:10px;">VTK</div>
+      <div>
+        <strong>TRIBLE TRAILER INC.</strong>
+        <span>DOT# 4521890 · MC# 1187334 · USDOT Licensed &amp; Insured</span>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#" onclick="showPage('services',null);return false;">Services</a>
+      <a href="#" onclick="showPage('garage',null);return false;">Fleet</a>
+      <a href="#" onclick="showPage('about',null);return false;">About</a>
+      <a href="#" onclick="showPage('contacts',null);return false;">Contacts</a>
+      <a href="#">Privacy</a>
+    </nav>
+    <!-- Lab 07: Social SVG icons in footer -->
+    <ul class="social-links footer-social" aria-label="Social media">
+      <li><a href="#" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.53 14.316l-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.288.27z"/></svg>
+      </a></li>
+      <li><a href="#" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a></li>
+      <li><a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      </a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">© 2025 VTK Trible Trailer Inc. All rights reserved.</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

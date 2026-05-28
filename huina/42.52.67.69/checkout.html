@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — VTK Trible Trailer Inc.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="nav-strip"></div>
+<header class="header">
+  <div class="nav-logo">
+    <div class="nav-logo-box">VTK</div>
+    <div class="nav-logo-text">
+      <strong>TRIBLE TRAILER INC.</strong>
+      <span>Transportation &amp; Logistics</span>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Main page</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#garage">Truck Garage</a></li>
+      <li><a href="index.html#about">About us</a></li>
+      <li><a href="checkout.html" class="active">Contacts</a></li>
+    </ul>
+  </nav>
+  <div class="user-actions">
+    <a href="index.html" class="btn btn-outline" style="height:36px;padding:0 16px;display:flex;align-items:center;font-size:13px;">← Back</a>
+  </div>
+  <button class="menu-toggle" aria-label="Toggle menu" onclick="this.closest('header').querySelector('.main-nav').classList.toggle('open')">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+  </button>
+</header>
+
+<div class="page-header">
+  <div class="breadcrumb"><a href="index.html">Main page</a> / Order Checkout</div>
+  <h1>Order Checkout</h1>
+  <p>Fill in the details to confirm your freight order</p>
+</div>
+
+<main>
+  <!-- Lab 06: Checkout form with fieldsets -->
+  <form action="#" method="POST" class="checkout-form" id="checkout-form" onsubmit="handleCheckout(event)">
+
+    <fieldset>
+      <legend>1. Personal Information</legend>
+      <div class="form-group">
+        <label for="fullName">Full Name (First, Last, Middle) *</label>
+        <input type="text" id="fullName" name="fullName" required
+          placeholder="John Michael Smith" minlength="5"
+          title="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required
+          placeholder="john@company.com">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone *</label>
+        <input type="tel" id="phone" name="phone" required
+          pattern="[\+][\d]{10,14}"
+          placeholder="+380991234567"
+          title="Format: +XXXXXXXXXXXX (10-14 digits after +)">
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Delivery Method</legend>
+      <div class="form-radio-group">
+        <div class="form-radio">
+          <input type="radio" id="deliveryFTL" name="delivery" value="ftl" checked>
+          <label for="deliveryFTL">FTL — Full Truckload</label>
+        </div>
+        <div class="form-radio">
+          <input type="radio" id="deliveryLTL" name="delivery" value="ltl">
+          <label for="deliveryLTL">LTL — Consolidated</label>
+        </div>
+        <div class="form-radio">
+          <input type="radio" id="deliveryExpress" name="delivery" value="express">
+          <label for="deliveryExpress">Express Delivery</label>
+        </div>
+      </div>
+      <div class="form-group" style="margin-top:1rem;">
+        <label for="country">Destination Country *</label>
+        <select id="country" name="country" required>
+          <option value="">Select country...</option>
+          <option value="de">Germany</option>
+          <option value="pl">Poland</option>
+          <option value="fr">France</option>
+          <option value="ua">Ukraine</option>
+          <option value="gb">United Kingdom</option>
+          <option value="nl">Netherlands</option>
+          <option value="cz">Czech Republic</option>
+          <option value="sk">Slovakia</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dispatchDate">Dispatch Date *</label>
+        <input type="date" id="dispatchDate" name="dispatchDate" required>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Comment &amp; Agreement</legend>
+      <div class="form-group">
+        <label for="orderComment">Order Comment</label>
+        <textarea id="orderComment" name="orderComment" rows="4"
+          placeholder="Special requirements, temperature regime, hazmat class, loading/unloading instructions..."></textarea>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" id="agree" name="agree" required>
+        <label for="agree">I agree with the <a href="#">terms of service</a> and <a href="#">privacy policy</a> of VTK Trible Trailer Inc.</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" id="newsletter" name="newsletter">
+        <label for="newsletter">Subscribe to news and special offers</label>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary btn-full">Confirm Order</button>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo-box" style="width:36px;height:36px;font-size:10px;">VTK</div>
+      <div>
+        <strong>TRIBLE TRAILER INC.</strong>
+        <span>DOT# 4521890 · MC# 1187334</span>
+      </div>
+    </div>
+    <nav class="footer-nav"><a href="index.html">Home</a><a href="#">Privacy</a></nav>
+  </div>
+  <div class="footer-copy">© 2025 VTK Trible Trailer Inc. All rights reserved.</div>
+</footer>
+
+<script>
+function handleCheckout(e) {
+  e.preventDefault();
+  alert('✅ Your order has been submitted! We will contact you within 2 hours.');
+  e.target.reset();
+}
+</script>
+</body>
+</html>
